@@ -1,0 +1,41 @@
+body {
+  background-color: #78909C;
+  font-family: 'Indie Flower', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-size: 148px;
+}
+
+/*Card Styling*/
+.note-card {
+  background: white;
+  border: 1px solid black;
+  width: 640px;
+  height: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22);
+}
+
+.note-card .recipe-name {
+  border-bottom: 1px solid red;
+  font-size: 32px;
+  padding-left: 12px;
+}
+
+ul.ingredients {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+ul.ingredients li {
+  border-bottom: 1px solid blue;
+  padding-left: 12px;
+}
+
+ul.ingredients li:last-child {
+  border-bottom: none;
+}
