@@ -5,7 +5,7 @@ var PROTEINS = [
   'Pork Shoulder/Butt',
   'Chicken Theigh',
   'Chicken Breast'
-]
+];
 
 var VEGETABLES = [
   'Yellow Onion, Carrot, Potato',
@@ -13,7 +13,7 @@ var VEGETABLES = [
   'Cauliflower, Olive, Butternut Squash',
   'Red Onion Broccoli, Peas',
   'Corn, Red Bell Pepper, Sweet Potato',
-]
+];
 
 var LIQUIDS = [
   'Meat Broth',
@@ -21,7 +21,7 @@ var LIQUIDS = [
   'Fire Roasted Tomatoes (w/juice)',
   'Coconut Milk',
   'Dark Beer!',
-]
+];
 
 var HERBS = [
   'Thyme, Parsley',
@@ -29,7 +29,7 @@ var HERBS = [
   'Cumin, Coriander',
   'Basil, Mint',
   'Chile Powder, Cilantro',
-]
+];
 
 var BOOSTERS = [
   'Tomato Paste',
@@ -37,7 +37,7 @@ var BOOSTERS = [
   'Preserved Lemon',
   'Lime Juice',
   'Miso Paste',
-]
+];
 
 var INGREDIENTS = [
   PROTEINS,
@@ -45,7 +45,7 @@ var INGREDIENTS = [
   LIQUIDS,
   HERBS,
   BOOSTERS
-]
+];
 
 var RECIPE;
 
@@ -56,7 +56,7 @@ var RECIPE;
 function shuffle(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
-};
+}
 
 
 /* Plucks a random item from an ingredient array and pushes it to the contant RECIPE.
@@ -67,7 +67,7 @@ function getIngredients(arr) {
   var l = arr.length;
   var current_ingredient;
   for (var i = 0; i < l; i++) {
-    var current_ingredient = shuffle(arr[i])[0];
+    current_ingredient = shuffle(arr[i])[0];
     RECIPE.push(current_ingredient);
   }
 }
@@ -84,6 +84,10 @@ function renderRecipe(recipeArray) {
   document.getElementById("booster").innerHTML = recipeArray[4];
 }
 
+document.getElementById("recipe-shuffler").addEventListener('click', function() {
+  getIngredients(INGREDIENTS);
+  renderRecipe(RECIPE);
+}, false);
 
 getIngredients(INGREDIENTS);
 renderRecipe(RECIPE);
