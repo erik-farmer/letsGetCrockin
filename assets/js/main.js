@@ -49,15 +49,6 @@ var INGREDIENTS = [
 
 var RECIPE;
 
-/* In place shuffle array.
- * param {!Array} o The input array.
- * return {!Array} o Reformatted array.
- */
-function shuffle(o){
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
-}
-
 
 /* Plucks a random item from an ingredient array and pushes it to the contant RECIPE.
  * param {!Array} arr The input array which we will pick the first item.
@@ -67,7 +58,7 @@ function getIngredients(arr) {
   var l = arr.length;
   var current_ingredient;
   for (var i = 0; i < l; i++) {
-    current_ingredient = shuffle(arr[i])[0];
+    current_ingredient = arr[i][~~(Math.random() * arr[i].length)];
     RECIPE.push(current_ingredient);
   }
 }
